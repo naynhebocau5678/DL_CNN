@@ -1,0 +1,9 @@
+- Mỗi filter (kernel) có một bias duy nhất.
+- Bias này được cộng vào mỗi giá trị trong tensor đầu ra sau khi áp dụng phép convolution với filter đó.
+- Mỗi giá trị trong đầu ra được tính bằng cách áp dụng kernel lên vùng tương ứng của đầu vào và cộng với bias của kernel.
+Ví dụ ảnh đầu vao size 6x6, kernel size 3x3 => output là 4x4
+đầu ra sẽ đuợc cộng them bias từ kernel filter, và áp dung them broadcasting
+
+Bias trong các lớp convolutional thường được khởi tạo ngẫu nhiên hoặc bằng 0.
+Các giá trị bias và trọng số được cập nhật trong quá trình huấn luyện bằng cách sử dụng các thuật toán tối ưu hóa.
+Việc khởi tạo ngẫu nhiên giúp tránh vấn đề đồng nhất và đảm bảo mô hình có thể học được các đặc trưng từ dữ liệu một cách hiệu quả.

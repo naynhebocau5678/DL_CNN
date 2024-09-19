@@ -1,0 +1,29 @@
+Câu hỏi số 5 trước đó là: **"Khi vector hóa trong mạng neuron cơ bản, quá trình cộng b (bias) vào ma trận Z được thực hiện như thế nào?"**
+
+Cụ thể, câu hỏi này nói về cách **bias** (**b**) được thêm vào **output** (**Z**) sau khi tính toán trong mạng neuron.
+
+### Biểu diễn của câu hỏi 5:
+
+Giả sử:
+- **Z** là ma trận đầu ra của quá trình nhân ma trận trọng số **W** với ma trận đầu vào **X**, có kích thước \( (n_y, m) \), trong đó:
+  - \( n_y \) là số lượng neuron ở lớp hiện tại.
+  - \( m \) là số lượng ví dụ đầu vào.
+  
+- **b** là bias, có kích thước \( (n_y, 1) \) (một vector cột với mỗi giá trị tương ứng với một neuron).
+
+Vì **b** là một vector cột, nên khi cộng **b** vào **Z**, **b** sẽ được **broadcast** (tự động nhân rộng) trên tất cả các cột của **Z** để có cùng kích thước với **Z**. Điều này có nghĩa là mỗi giá trị trong **b** sẽ được cộng vào từng hàng của tất cả các cột trong **Z**.
+
+### Ví dụ:
+Giả sử bạn có:
+- **Z**: \( Z = \begin{bmatrix} 1 & 2 & 3 \\ 4 & 5 & 6 \end{bmatrix} \), kích thước \( (2, 3) \) (2 neuron, 3 ví dụ).
+- **b**: \( b = \begin{bmatrix} 0.5 \\ 1.0 \end{bmatrix} \), kích thước \( (2, 1) \).(xem anảnh)
+
+Khi cộng **b** vào **Z**, vector **b** sẽ được cộng vào từng cột của **Z**:
+
+\[
+Z + b = \begin{bmatrix} 1 & 2 & 3 \\ 4 & 5 & 6 \end{bmatrix} + \begin{bmatrix} 0.5 \\ 1.0 \end{bmatrix} = \begin{bmatrix} 1 + 0.5 & 2 + 0.5 & 3 + 0.5 \\ 4 + 1.0 & 5 + 1.0 & 6 + 1.0 \end{bmatrix} = \begin{bmatrix} 1.5 & 2.5 & 3.5 \\ 5 & 6 & 7 \end{bmatrix}
+\]
+
+Như vậy, **b** đã được **broadcast** để cộng vào tất cả các cột của **Z**, và kết quả là một ma trận có cùng kích thước với **Z** ban đầu.
+
+---

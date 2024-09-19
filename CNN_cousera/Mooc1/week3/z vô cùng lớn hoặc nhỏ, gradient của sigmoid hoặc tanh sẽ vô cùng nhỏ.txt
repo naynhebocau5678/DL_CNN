@@ -1,0 +1,10 @@
+Tại sao Gradient gần như bằng 0 là vấn đề?
+Cập Nhật Trọng Số Kém:
+
+Trong quá trình huấn luyện mạng nơ-ron, gradient được sử dụng để cập nhật trọng số của các neuron. Nếu gradient gần như bằng 0, sự thay đổi trong trọng số sẽ rất nhỏ, dẫn đến việc trọng số không được cập nhật hiệu quả. Kết quả là, mạng nơ-ron không thể học được các đặc trưng quan trọng từ dữ liệu.
+Khó Khăn trong Huấn Luyện Các Lớp Sâu:
+
+Trong mạng nơ-ron sâu, gradient biến mất thường xảy ra ở các lớp sâu hơn, khiến việc học trở nên khó khăn hơn. Các lớp gần đầu vào sẽ gặp vấn đề khi gradient truyền ngược qua các lớp, dẫn đến việc mạng không thể cải thiện hiệu suất của các lớp sâu.
+Tốc Độ Hội Tụ Chậm:
+
+Khi gradient rất nhỏ, quá trình học diễn ra rất chậm. Các cập nhật trọng số nhỏ khiến mạng cần nhiều epochs (vòng lặp huấn luyện) hơn để hội tụ đến một giải pháp tối ưu.

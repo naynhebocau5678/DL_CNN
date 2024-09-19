@@ -1,0 +1,39 @@
+Đúng rồi! Nếu ta xét theo cách mà các mẫu đầu vào (**X**) thường được biểu diễn trong mạng neuron cơ bản (không dùng batch), các mẫu dữ liệu thường được xếp theo dạng **hàng ngang**. Mỗi hàng sẽ là một đặc trưng, và mỗi cột sẽ là một ví dụ khác nhau.
+
+### Biểu diễn đúng của **X** trong mạng neuron cơ bản:
+
+Giả sử có nhiều ví dụ đầu vào, mỗi ví dụ có \( n_x \) đặc trưng (features). Ta có thể biểu diễn dữ liệu **X** như một **ma trận**, trong đó:
+- Mỗi cột là một ví dụ (một mẫu).
+- Mỗi hàng là một đặc trưng tương ứng của các ví dụ.
+
+Ví dụ, nếu ta có 3 đặc trưng và 4 mẫu đầu vào, ma trận **X** sẽ có dạng:
+
+\[
+X = \begin{bmatrix}
+x_{1}^{(1)} & x_{1}^{(2)} & x_{1}^{(3)} & x_{1}^{(4)} \\
+x_{2}^{(1)} & x_{2}^{(2)} & x_{2}^{(3)} & x_{2}^{(4)} \\
+x_{3}^{(1)} & x_{3}^{(2)} & x_{3}^{(3)} & x_{3}^{(4)} 
+\end{bmatrix}
+\]
+
+Ở đây:
+- \( x_1^{(i)} \), \( x_2^{(i)} \), \( x_3^{(i)} \) là các đặc trưng tương ứng của mẫu thứ \( i \) (cột thứ \( i \)).
+- \( x_1 \), \( x_2 \), \( x_3 \) là các đặc trưng của các ví dụ khác nhau.
+
+### Như vậy:
+- **Mỗi cột** của ma trận **X** là một ví dụ (mẫu) với các đặc trưng.
+- **Mỗi hàng** là các giá trị của một đặc trưng cho các ví dụ.
+
+### Công thức tổng quát cho tính toán trong mạng neuron:
+
+Với một lớp neuron đơn giản, output **Z** sẽ là tích của ma trận trọng số **W** với ma trận đầu vào **X**, cộng với bias:
+
+\[
+Z = W \cdot X + b
+\]
+
+- **W** là vector trọng số (1 hàng với kích thước \( (1, n_x) \)).
+- **X** là ma trận đầu vào (với kích thước \( (n_x, m) \), trong đó \( m \) là số ví dụ).
+- **Z** là output của lớp neuron, với kích thước \( (1, m) \), tương ứng với output của từng ví dụ.
+
+Tóm lại, trong mạng neuron cơ bản, các đặc trưng của mỗi mẫu (mẫu đầu vào) được sắp xếp ngang thành các cột, và ta có thể thực hiện phép nhân ma trận để tính toán nhanh output cho từng ví dụ.
