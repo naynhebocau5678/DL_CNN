@@ -1,0 +1,13 @@
+Để tính toán chi phí tính toán (computational cost) của một lớp tích chập trong mạng nơ-ron, chúng ta thường tính số lượng phép toán nhân và cộng mà lớp đó phải thực hiện khi xử lý một đầu vào. Đây là một cách tiếp cận phổ biến để ước tính chi phí tính toán, thường được gọi là số lượng FLOPs (Floating Point Operations).
+
+Công thức: 
+Số lượng FLOPS = Output height x Output width x Number of filters x Filter Height x filter width x input channels
+
+VD: 
+Input : 28x28x192
+Size of conv : 5x5
+number of filter : 32
+same padding
+output: 28x28x32
+
+=> FLops = 28 x 28 x32 x5 x5 x192 = 120M

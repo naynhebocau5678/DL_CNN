@@ -1,0 +1,31 @@
+Để tính số lượng tham số (parameters) trong một lớp tích chập (convolutional layer) của một mạng nơ-ron, bạn cần biết các thông số sau:
+
+1. Số lượng bộ lọc (filters) trong lớp.
+2. Kích thước của mỗi bộ lọc (filter size), thường là chiều cao và chiều rộng (ví dụ: 3x3, 5x5).
+3. Số kênh đầu vào (input channels), tức là số lượng kênh của ảnh đầu vào (ví dụ: 3 đối với ảnh màu RGB, 1 đối với ảnh xám).
+4. Có sử dụng bias hay không.
+
+Công thức tổng quát để tính số lượng tham số trong một lớp tích chập như sau:
+
+Số lượng tham số = (Filter Height x Filter Width x Input Channels + 1) x Number of Filters
+
+Trong đó:
+- `Filter Height` là chiều cao của bộ lọc.
+- `Filter Width` là chiều rộng của bộ lọc.
+- `Input Channels` là số kênh đầu vào.
+- `Number of Filters` là số lượng bộ lọc trong lớp tích chập.
+- `+1` là để tính bias (mỗi bộ lọc có một bias riêng).
+
+Ví dụ cụ thể:
+
+Giả sử bạn có một lớp tích chập với:
+- Số lượng bộ lọc (Number of Filters): 32
+- Kích thước bộ lọc (Filter Size): 3x3
+- Số kênh đầu vào (Input Channels): 3 (ảnh màu RGB)
+- Sử dụng bias
+
+Áp dụng công thức:
+
+Số lượng tham số = (3 x 3 x 3 + 1) x 32 = 896
+
+Vậy lớp tích chập này có tổng cộng 896 tham số.
