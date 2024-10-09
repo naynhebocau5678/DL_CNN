@@ -1,0 +1,5 @@
+Download data 
+- for linux: !ls generate_csv.py get_data
+- for window: !conda generate_csv.py get_data
+
+- If evaluate model, modify LOAD_MODEL = TRUE
